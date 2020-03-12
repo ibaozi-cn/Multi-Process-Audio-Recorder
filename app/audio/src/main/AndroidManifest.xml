@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.julive.audio" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application>
+        <service
+            android:name=".RecorderService"
+            android:enabled="true"
+            android:exported="true"
+            android:process="com.julive.audio"
+            >
+            <intent-filter>
+                <action android:name="com.julive.audio.service"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
